@@ -7,6 +7,8 @@ import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { BudgetContainerComponent } from './budget-container/budget-container.component';
 import { MonthFilterContainerComponent } from './month-filter-container/month-filter-container.component';
 import { YearFilterContainerComponent } from './year-filter-container/year-filter-container.component';
+import { MonthFilterComponent } from './month-filter/month-filter.component';
+import { YearFilterComponent } from './year-filter/year-filter.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { YearFilterContainerComponent } from './year-filter-container/year-filte
     BudgetContainerComponent,
     MonthFilterContainerComponent,
     YearFilterContainerComponent,
+    MonthFilterComponent,
+    YearFilterComponent,
   ],
   imports: [BrowserModule],
   providers: [],
