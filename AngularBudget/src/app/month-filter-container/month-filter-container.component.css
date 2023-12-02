@@ -1,0 +1,4 @@
+.flex-box-month {
+  display: flex;
+  justify-content: space-evenly;
+}

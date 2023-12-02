@@ -6,11 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./month-filter.component.css'],
 })
 export class MonthFilterComponent implements OnInit {
-  currentYear!: number;
+  currentMonth!: String;
+
+  months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
 
   constructor() {}
 
   ngOnInit(): void {
-    this.currentYear = new Date().getFullYear();
+    this.currentMonth = this.months[new Date().getMonth()];
   }
 }

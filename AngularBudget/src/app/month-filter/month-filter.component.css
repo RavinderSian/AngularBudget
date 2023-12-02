@@ -1,0 +1,17 @@
+.month-text {
+  display: block;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  flex-basis: 130px;
+}
+
+.anchor-arrow-next {
+  display: block;
+  width: 50px;
+}
+
+.anchor-arrow-back {
+  display: block;
+  width: 50px;
+}
