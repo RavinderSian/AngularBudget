@@ -9,6 +9,7 @@ import { MonthFilterContainerComponent } from './month-filter-container/month-fi
 import { YearFilterContainerComponent } from './year-filter-container/year-filter-container.component';
 import { MonthFilterComponent } from './month-filter/month-filter.component';
 import { YearFilterComponent } from './year-filter/year-filter.component';
+import { DateFilterComponent } from './date-filter/date-filter.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { YearFilterComponent } from './year-filter/year-filter.component';
     YearFilterContainerComponent,
     MonthFilterComponent,
     YearFilterComponent,
+    DateFilterComponent,
   ],
   imports: [BrowserModule],
   providers: [],
