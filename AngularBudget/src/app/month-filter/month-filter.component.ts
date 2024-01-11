@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-month-filter',
+  selector: 'month-filter',
   templateUrl: './month-filter.component.html',
   styleUrls: ['./month-filter.component.css'],
 })

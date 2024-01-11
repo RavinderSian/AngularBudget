@@ -1,0 +1,4 @@
+.flex-box-year {
+  display: flex;
+  justify-content: space-evenly;
+}

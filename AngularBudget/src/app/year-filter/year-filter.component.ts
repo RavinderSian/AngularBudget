@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-year-filter',
+  selector: 'year-filter',
   templateUrl: './year-filter.component.html',
-  styleUrls: ['./year-filter.component.css']
+  styleUrls: ['./year-filter.component.css'],
 })
-export class YearFilterComponent {
+export class YearFilterComponent implements OnInit {
+  currentYear!: number;
 
+  ngOnInit(): void {
+    this.currentYear = new Date().getFullYear();
+  }
 }

@@ -1,0 +1,15 @@
+.flex-box-year {
+  display: flex;
+}
+
+.anchor-arrow-back {
+  width: 50px;
+}
+
+.anchor-arrow-next {
+  width: 50px;
+}
+
+.year-text {
+  margin: 10px;
+}
