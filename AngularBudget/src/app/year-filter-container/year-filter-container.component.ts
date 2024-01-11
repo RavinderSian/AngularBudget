@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-year-filter-container',
+  selector: 'year-filter-container',
   templateUrl: './year-filter-container.component.html',
-  styleUrls: ['./year-filter-container.component.css']
+  styleUrls: ['./year-filter-container.component.css'],
 })
-export class YearFilterContainerComponent {
-
-}
+export class YearFilterContainerComponent {}
