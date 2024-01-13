@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DateFilterComponent } from './date-filter.component';
+import { DateFilterComponent } from './date-filter-container.component';
 
 describe('DateFilterComponent', () => {
   let component: DateFilterComponent;
@@ -8,7 +8,7 @@ describe('DateFilterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DateFilterComponent]
+      declarations: [DateFilterComponent],
     });
     fixture = TestBed.createComponent(DateFilterComponent);
     component = fixture.componentInstance;
