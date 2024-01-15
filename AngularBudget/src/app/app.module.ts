@@ -11,6 +11,7 @@ import { MonthFilterContainerComponent } from './month-filter-container/month-fi
 import { MonthFilterComponent } from './month-filter/month-filter.component';
 import { YearFilterContainerComponent } from './year-filter-container/year-filter-container.component';
 import { YearFilterComponent } from './year-filter/year-filter.component';
+import { ExpenseComponent } from './expense/expense.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { YearFilterComponent } from './year-filter/year-filter.component';
     DateFilterComponent,
     AddExpenseContainerComponent,
     ExpenseListComponent,
+    ExpenseComponent,
   ],
   imports: [BrowserModule],
   providers: [],
