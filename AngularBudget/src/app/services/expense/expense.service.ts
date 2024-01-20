@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { IExpenseData } from 'src/app/interfaces/expense.interface';
 
 @Injectable({
@@ -34,6 +34,17 @@ export class ExpenseService {
         description: 'Travel',
         purchaseDate: new Date(),
       },
-    ]);
+    ]).pipe(
+      map((expense: any) => {
+        return <IExpenseData>{
+          id: expense.id,
+          userId: expense.userId,
+          category: expense.category,
+          amount: expense.amount,
+          description: expense.description,
+          purchaseDate: expense.purchaseDate,
+        };
+      })
+    );
   }
 }
