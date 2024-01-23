@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription, of } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { Expense } from 'src/app/models/expense';
 import { ExpenseService } from 'src/app/services/expense/expense.service';
 
 @Component({
@@ -10,11 +11,19 @@ import { ExpenseService } from 'src/app/services/expense/expense.service';
 export class ExpenseListComponent implements OnInit {
   public service: ExpenseService;
   private subscriptions$ = new Subscription();
-  public expensesForUser$: Observable<any>;
+  public expensesForUser$: Observable<Expense>;
 
-  constructor(service: ExpenseService) {
+  constructor(service: ExpenseService, expensesForUser$: Observable<Expense>) {
     this.service = service;
-    this.expensesForUser$ = of(1, 2, 3, 4, 5);
+    this.expensesForUser$ = expensesForUser$;
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.expensesForUser$ = this.service.getExpensesForUser(1);
+
+    this.subscriptions$.add(
+      this.expensesForUser$.subscribe((data) => {
+        console.log(data);
+      })
+    );
+  }
 }
