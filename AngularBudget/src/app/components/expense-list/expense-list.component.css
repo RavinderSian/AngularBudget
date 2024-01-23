@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+.hidden {
+  display: none;
+}
+
+.hidden-opacity-collapse {
+  opacity: 0;
+  height: 0;
+}
+
+.budget-list {
+  margin-left: 40px;
+  padding-left: 5px;
+  display: grid;
+  border: 2px solid blue;
+  border-radius: 10px;
+  background-color: #8ce99a;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+.delete-expense-link {
+  pointer-events: none;
+}
+
+.delete-expense-btn {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.edit-expense-btn {
+  cursor: pointer;
+  pointer-events: auto;
+}

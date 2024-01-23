@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+
+.hidden {
+  display: none;
+}
+
+.budget-list-header {
+  justify-content: space-evenly;
+  padding-left: 10px;
+  margin-left: 40px;
+  display: grid;
+  border: 2px solid blue;
+  border-radius: 10px;
+  background-color: #8ce99a;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+.sorted-header {
+  margin-bottom: 0;
+}
+
+.sorting-arrows {
+  width: min-content;
+}
+
+.sorting-arrows:hover {
+  cursor: pointer;
+}
+
+.year-grid {
+  display: grid;
+  justify-content: center;
+}
+
+.flex-box-month {
+  display: flex;
+  justify-content: space-evenly;
+}
