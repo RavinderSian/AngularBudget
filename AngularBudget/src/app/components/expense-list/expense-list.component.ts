@@ -11,11 +11,10 @@ import { ExpenseService } from 'src/app/services/expense/expense.service';
 export class ExpenseListComponent implements OnInit {
   public service: ExpenseService;
   private subscriptions$ = new Subscription();
-  public expensesForUser$: Observable<Expense>;
+  public expensesForUser$!: Observable<Expense>;
 
-  constructor(service: ExpenseService, expensesForUser$: Observable<Expense>) {
+  constructor(service: ExpenseService) {
     this.service = service;
-    this.expensesForUser$ = expensesForUser$;
   }
   ngOnInit(): void {
     this.expensesForUser$ = this.service.getExpensesForUser(1);
