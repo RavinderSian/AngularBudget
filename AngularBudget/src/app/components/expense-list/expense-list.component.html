@@ -1,1 +1,5 @@
-<div class="budget-list"></div>
+<div class="budget-list">
+  <div *ngFor="let expenseItem of expenseList">
+    <expense [expense]="expenseItem"></expense>
+  </div>
+</div>

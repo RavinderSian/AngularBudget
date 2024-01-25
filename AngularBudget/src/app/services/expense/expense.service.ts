@@ -17,7 +17,7 @@ export class ExpenseService {
         category: 'TRAVEL',
         amount: 10.5,
         description: 'Travel',
-        purchaseDate: new Date(),
+        purchaseDate: new Date().toISOString(),
       },
       {
         id: 1,
@@ -25,7 +25,7 @@ export class ExpenseService {
         category: 'DIRECT_DEBITS',
         amount: 10.5,
         description: 'Travel',
-        purchaseDate: new Date(),
+        purchaseDate: new Date().toISOString(),
       },
       {
         id: 2,
@@ -33,7 +33,7 @@ export class ExpenseService {
         category: 'FUEL',
         amount: 10.5,
         description: 'Travel',
-        purchaseDate: new Date(),
+        purchaseDate: new Date().toISOString(),
       }
     ).pipe(
       map((expense: any) => {

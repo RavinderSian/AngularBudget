@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Expense } from 'src/app/models/expense';
 
 @Component({
-  selector: 'app-expense',
+  selector: 'expense',
   templateUrl: './expense.component.html',
   styleUrls: ['./expense.component.css'],
 })
-export class ExpenseComponent {
-  public expense: Expense;
+export class ExpenseComponent implements OnInit {
+  @Input() expense!: Expense;
 
-  constructor(expense: Expense) {
-    this.expense = expense;
+  constructor() {}
+
+  ngOnInit(): void {
+    console.log(this.expense);
   }
 }
