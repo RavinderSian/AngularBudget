@@ -1,5 +1,5 @@
 <div class="budget-list">
-  <p>{{ expense.purchaseDate }}</p>
+  <p>{{ expense.purchaseDate | date : "dd-MM-YYYY" }}</p>
   <p>{{ expense.category }}</p>
   <p>{{ expense.amount | currency : "GBP" : "symbol" }}</p>
   <p>{{ expense.description }}</p>
