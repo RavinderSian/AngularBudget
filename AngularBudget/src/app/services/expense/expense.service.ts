@@ -48,4 +48,26 @@ export class ExpenseService {
       })
     );
   }
+
+  getExpensesApi(userId: number): Observable<Expense> {
+    return of({
+      id: 1,
+      userId: 1,
+      category: 'TRAVEL',
+      amount: 10.5,
+      description: 'Travel',
+      purchaseDate: new Date(),
+    }).pipe(
+      map((expense: any) => {
+        return <IExpenseData>{
+          id: expense.id,
+          userId: expense.userId,
+          category: expense.category,
+          amount: expense.amount,
+          description: expense.description,
+          purchaseDate: expense.purchaseDate,
+        };
+      })
+    );
+  }
 }
