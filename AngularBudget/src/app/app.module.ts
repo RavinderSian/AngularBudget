@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AddExpenseContainerComponent } from './components/add-expense-container/add-expense-container.component';
 import { BudgetContainerComponent } from './components/budget-container/budget-container.component';
@@ -31,7 +32,7 @@ import { ExpenseService } from './services/expense/expense.service';
     ExpenseComponent,
     ExpenseListHeaderComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [ExpenseService],
   bootstrap: [AppComponent],
 })
