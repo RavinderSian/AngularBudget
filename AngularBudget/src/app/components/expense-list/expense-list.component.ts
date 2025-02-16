@@ -11,7 +11,7 @@ import { ExpenseService } from 'src/app/services/expense/expense.service';
 export class ExpenseListComponent implements OnInit {
   public service: ExpenseService;
   private subscriptions$ = new Subscription();
-  public expensesForUser$!: Observable<Expense>;
+  public expensesForUser$!: Observable<Expense[]>;
   public expenseList: Expense[] = [];
 
   constructor(service: ExpenseService) {
@@ -22,8 +22,7 @@ export class ExpenseListComponent implements OnInit {
 
     this.subscriptions$.add(
       this.expensesForUser$.subscribe((data) => {
-        console.log(data);
-        this.expenseList.push(data);
+        this.expenseList = data;
       })
     );
   }

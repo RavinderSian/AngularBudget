@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
-import { IExpenseData } from 'src/app/interfaces/expense.interface';
+import { map, Observable } from 'rxjs';
 import { Expense } from 'src/app/models/expense';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class ExpenseService {
 
   constructor() {}
 
-  getExpensesForUser(userId: number): Observable<Expense> {
+  getExpensesForUser(userId: number): Observable<Expense[]> {
     let expense = {
       year: 2024,
       month: 1,
@@ -20,7 +19,7 @@ export class ExpenseService {
 
     console.log(expense);
 
-    this.httpClient
+    return this.httpClient
       .post('/api/expenseformonth', expense, {
         headers: new HttpHeaders({
           Authorization: 'Basic ' + btoa('rsian:test'),
@@ -28,57 +27,9 @@ export class ExpenseService {
         }),
       })
       .pipe(
-        map((expense: any) => {
-          return <IExpenseData>{
-            id: expense.id,
-            userId: expense.userId,
-            category: expense.category,
-            amount: expense.amount,
-            description: expense.description,
-            purchaseDate: expense.purchaseDate,
-          };
+        map((expenses: any) => {
+          return expenses;
         })
-      )
-      .subscribe((response) => {
-        console.log(response);
-      });
-
-    return of(
-      {
-        id: 1,
-        userId: 1,
-        category: 'TRAVEL',
-        amount: 10.5,
-        description: 'Travel',
-        purchaseDate: new Date(),
-      },
-      {
-        id: 1,
-        userId: 1,
-        category: 'DIRECT_DEBITS',
-        amount: 10.5,
-        description: 'Travel',
-        purchaseDate: new Date(),
-      },
-      {
-        id: 2,
-        userId: 1,
-        category: 'FUEL',
-        amount: 10.5,
-        description: 'Travel',
-        purchaseDate: new Date(),
-      }
-    ).pipe(
-      map((expense: any) => {
-        return <IExpenseData>{
-          id: expense.id,
-          userId: expense.userId,
-          category: expense.category,
-          amount: expense.amount,
-          description: expense.description,
-          purchaseDate: expense.purchaseDate,
-        };
-      })
-    );
+      );
   }
 }
